@@ -1,0 +1,1 @@
+.list-view[data-v-2e3fe2ee]:nth-child(2n){margin:.5em 0}.list-view .item[data-v-2e3fe2ee]{cursor:pointer;border-radius:1em;margin:0 0 0 .5em;padding:.25em .75em;color:var(--text-base)}.list-view .item[data-v-2e3fe2ee]:hover{color:var(--text-hover)}.list-view .item.active[data-v-2e3fe2ee]{background:var(--fill-base);color:var(--text-active);pointer-events:none;cursor:none}
