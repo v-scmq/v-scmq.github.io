@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, height=device-height, initial-scale=1, maximum-scale=1'>
     <title>3D相册</title>
 
     <style>
@@ -22,38 +23,38 @@
         }
 
         .cube-wrapper {
-            --face-size: 200px;
+            --face-size: 100px;
             --face-translate: calc(var(--face-size) / 2);
 
             position: relative;
             width: var(--face-size);
             height: var(--face-size);
             transform-style: preserve-3d;
-            transform: rotateX(-10deg) rotateY(-30deg) rotateZ(0deg);
-            animation: rotate 8s linear infinite;
+            /*transform: rotateX(-10deg) rotateY(-30deg) rotateZ(0deg);*/
+            animation: rotate 12s linear infinite;
         }
 
         .--scale .cube-wrapper {
-            --face-size: 240px;
-            --face-translate: 400px;
+            --face-translate: 100px;
+        }
+
+        .--scale .cube-wrapper .face {
+            border-radius: 8px;
         }
 
         .cube-wrapper .face {
+            top: 0;
+            left: 0;
             position: absolute;
             width: 100%;
             height: 100%;
-            top: 0;
-            left: 0;
-            /*opacity: 0.7;*/
             backface-visibility: visible;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .cube-wrapper .face .picture {
             width: 100%;
             height: 100%;
+            border-radius: inherit;
         }
 
         .cube-wrapper .face.front {
@@ -86,18 +87,84 @@
             transform: rotateX(-90deg) translate3d(0, 0, var(--face-translate));
         }
 
+        @media screen and (min-width: 500px) {
+            .cube-wrapper {
+                --face-size: 120px;
+            }
+
+            .--scale .cube-wrapper {
+                --face-translate: 160px;
+            }
+        }
+
+        @media screen and (min-width: 600px) {
+            .cube-wrapper {
+                --face-size: 150px;
+            }
+
+            .--scale .cube-wrapper {
+                --face-translate: 200px;
+            }
+        }
+
+        @media screen and (min-width: 700px) {
+            .cube-wrapper {
+                --face-size: 200px;
+            }
+
+            .--scale .cube-wrapper {
+                --face-translate: 230px;
+            }
+        }
+
+        @media screen and (min-width: 800px) {
+            .cube-wrapper {
+                --face-size: 280px;
+            }
+
+            .--scale .cube-wrapper {
+                --face-translate: 300px;
+            }
+        }
+
+        @media screen and (min-width: 1000px) {
+            .cube-wrapper {
+                --face-size: 300px;
+            }
+
+            .--scale .cube-wrapper {
+                --face-translate: 320px;
+            }
+        }
+
         @keyframes rotate {
+            /* 0% {
+                 transform: rotateX(-10deg) rotateY(-30deg) rotateZ(0deg);
+             }
+
+             100% {
+                 transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+             }*/
+
             0% {
-                transform: rotateX(-10deg) rotateY(-30deg) rotateZ(0deg);
+                transform: rotateX(0) rotateY(0);
+            }
+
+            25% {
+                transform: rotateX(360deg) rotateY(0);
+            }
+
+            50% {
+                transform: rotateY(360deg) rotateY(360deg) rotateZ(0);
+            }
+
+            75% {
+                transform: rotateY(360deg) rotateY(360deg) rotateZ(360deg);
             }
 
             100% {
-                transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+                transform: rotateY(360deg) rotateY(360deg) rotateZ(0);
             }
-
-            /*0% {*/
-            /*    transform: rotateX(0);*/
-            /*}*/
 
             /*25% {*/
             /*    transform: rotateX(360deg) rotateY(180deg);*/
@@ -116,10 +183,19 @@
             /*}*/
 
         }
+
+        .device-size-info {
+            top: 0;
+            position: absolute;
+            margin: 0 auto;
+            white-space: pre-wrap;
+            color: white;
+        }
     </style>
 </head>
 <body>
 <div id="app">
+    <div class="device-size-info"></div>
     <div class="cube-wrapper">
         <div class="face front"><img class="picture" alt src="album/1.jpeg"/></div>
         <div class="face back"><img class="picture" alt src="album/2.jpeg"/></div>
@@ -136,6 +212,17 @@
     app.onclick = () => {
         app.classList.toggle('--scale');
     };
+
+    const deviceInfoNode = document.querySelector('.device-size-info');
+
+    const resizeCallback = () => {
+        const {offsetWidth, offsetHeight} = document.body;
+        deviceInfoNode.innerHTML = `width: ${offsetWidth}   height: ${offsetHeight}`;
+    };
+
+    window.addEventListener('resize', resizeCallback);
+
+    resizeCallback();
 </script>
 </body>
 </html>
