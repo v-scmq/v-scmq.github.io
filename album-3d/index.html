@@ -23,7 +23,8 @@
             align-items: center;
             perspective: 2000px;
             /*background: linear-gradient(skyblue, khaki);*/
-            background: #000000;
+            background-image: url(./album/background.png);
+            background-color: #000;
         }
 
         .cube-wrapper {
@@ -282,9 +283,9 @@
     </div>
 </div>
 
-<script src="./js/particles.js"></script>
+<!--<script src="./js/particles.js"></script>-->
 <script>
-    new Particles({parentId: 'app'});
+    // new Particles({parentId: 'app'});
 
     document.querySelector('.cube-wrapper').onclick = ({target}) => {
         target.closest('.cube-wrapper').classList.toggle('expand');
@@ -342,8 +343,6 @@
     window.addEventListener('resize', resizeCallback);
 
     resizeCallback();
-
-
 </script>
 </body>
 </html>
