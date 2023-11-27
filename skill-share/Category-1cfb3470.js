@@ -1,0 +1,1 @@
+import{_ as e}from"./_plugin-vue_export-helper-c27b6911.js";import{o,c as r}from"./index-369fc505.js";const t={};function c(n,s){return o(),r("div",null,"this is category")}const f=e(t,[["render",c]]);export{f as default};
