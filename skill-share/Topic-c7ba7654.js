@@ -1,1 +1,0 @@
-import{_ as c}from "./export-helper.js";import{o,c as e}from"./index-369fc505.js";const t={};function r(n, s){return o(),e("div",null,"this is topic")}const a=c(t,[["render",r]]);export{a as default};
