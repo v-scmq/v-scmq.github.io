@@ -1,0 +1,1 @@
+import{_ as e}from"./i-x3n3nnut.js";import{o as c,c as t}from"./i-lx2Xo7Xt.js";const o={},r={class:"card-item"};function s(n,a){return c(),t("div",r,"this is category")}const d=e(o,[["render",s]]);export{d as default};
