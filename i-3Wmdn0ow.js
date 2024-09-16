@@ -1,1 +1,0 @@
-import{_ as e}from"./i-x3n3nnut.js";import{o as t,c}from"./i-lx2Xo7Xt.js";const o={},s={class:"card-item"};function r(n,_){return t(),c("div",s,"this is note")}const d=e(o,[["render",r]]);export{d as default};

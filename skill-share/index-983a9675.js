@@ -1,1 +1,0 @@
-const n=a=>new Promise(t=>{const e=new FileReader;e.onload=()=>void t(e.result),e.onerror=()=>t(null),e.readAsDataURL(a)}),o=a=>{const t=new Date,e=new Date(t.getFullYear(),t.getMonth(),t.getDate()).getTime();return[new Date(e-a*24*60*60*1e3).getTime(),e]};export{n as f,o as g};
