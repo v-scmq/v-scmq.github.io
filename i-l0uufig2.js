@@ -1,0 +1,1 @@
+import{m as c,o as t}from"./i-k271y7tk.js";import{E as e}from"./i-klhk99nn.js";import{_ as r}from"./i-ou69qqfo.js";const s={};function n(m,_){const o=e;return t(),c(o,{class:"card-item",description:"当前页面不可用"})}const f=r(s,[["render",n]]);export{f as default};
