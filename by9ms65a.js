@@ -1,0 +1,1 @@
+import{y as n,o as s}from"./ev20qhq0.js";import{E as _}from"./kvnh6jjx.js";const a=(o,e)=>{const t=o.__vccOpts||o;for(const[c,r]of e)t[c]=r;return t},p={};function m(o,e){const t=_;return s(),n(t,{description:"当前页面不可用"})}const l=a(p,[["render",m]]);export{l as default};
